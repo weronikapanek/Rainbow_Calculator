@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 30px;
+    position: absolute;
+    top: 10%;
+    
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fcad03;
+    font-size: 20px;
+}
+
+.calculate {
+    position: relative;
+    display: grid;
+    border: 1px solid #fc4a03;
+    font-weight: 600;
+}
+
+.calculate .value {
+    grid-column: span 4;
+    height: 100px;
+    text-align: right;
+    outline: none;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.calculate span {
+    display: grid;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    background: #fca903;
+    place-items: center;
+    border: 1px solid #fc4a03;
+
+}
+
+.calculate span:active {
+    background: #fce303;
+    color: #fff;
+}
+
+.calculate span.clear {
+    grid-column: span 2;
+    width: 120px;
+    background: #ff3077;
+}
+.calculate span.plus {
+    grid-row: span 2;
+    height: 120px;
+}
+
+.calculate span.equal {
+    background: #50cc56;
+}
+
+</style>
+</head>
+<body>
+    <h1>Let's count something!</h1><br/>
+    <form class="calculate" action="" name="calc">
+        <input class="value" type="text" name="txt" readonly="">
+        <span class="num clear" onclick="document.calc.txt.value =''">C</span>
+        <span class="num" onclick="document.calc.txt.value +='/'">/</span>
+        <span class="num" onclick="document.calc.txt.value +='*'">*</span>
+        <span class="num" onclick="document.calc.txt.value +='7'">7</span>
+        <span class="num" onclick="document.calc.txt.value +='8'">8</span>
+        <span class="num" onclick="document.calc.txt.value +='9'">9</span>
+        <span class="num" onclick="document.calc.txt.value +='-'">-</span>
+        <span class="num" onclick="document.calc.txt.value +='4'">4</span>
+        <span class="num" onclick="document.calc.txt.value +='5'">5</span>
+        <span class="num" onclick="document.calc.txt.value +='6'">6</span>
+        <span class="num plus" onclick="document.calc.txt.value +='+'">+</span>
+        <span class="num" onclick="document.calc.txt.value +='3'">3</span>
+        <span class="num" onclick="document.calc.txt.value +='2'">2</span>
+        <span class="num" onclick="document.calc.txt.value +='1'">1</span>
+        <span class="num" onclick="document.calc.txt.value +='0'">0</span>
+        <span class="num" onclick="document.calc.txt.value +='00'">00</span>
+        <span class="num" onclick="document.calc.txt.value +='.'">.</span>
+        <span class="num equal" onclick="document.calc.txt.value = eval(calc.txt.value)">=</span>
+    </form>
+</body>
+</html>
